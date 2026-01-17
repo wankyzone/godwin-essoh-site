@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1f2933;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1.2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #1f2933;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2.5rem 1rem;
+}
+
+/* HERO */
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  max-width: 750px;
+}
+
+/* BUTTONS */
+.actions {
+  margin-top: 1.8rem;
+}
+
+.btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-right: 0.6rem;
+}
+
+.primary {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.secondary {
+  border: 1px solid #0f172a;
+  color: #0f172a;
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 3.5rem;
+}
+
+.section h3 {
+  margin-bottom: 0.6rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1.8rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  margin-top: 4rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  font-size: 1.8rem;
+}
+
+.list {
+  margin-left: 1.2rem;
+}
+
+.list li {
+  margin-bottom: 0.4rem;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
