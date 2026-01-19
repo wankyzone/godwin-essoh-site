@@ -1,5 +1,5 @@
 html, body {
-  background: red !important;
+  background: var(--background)
 }
 
 /* ================================
@@ -200,11 +200,20 @@ nav a:hover::after {
    SECTIONS
 ================================ */
 .section {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .section h3 {
-  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.section P {
+  margin-top: 0;
+}
+
+.section:last-of-type {
+  margin-bottom: 1.5rem;
 }
 
 /* ================================
