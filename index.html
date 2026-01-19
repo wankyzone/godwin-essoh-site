@@ -8,32 +8,32 @@
 
   <title>Godwin Edet Essoh, Ph.D., FCIA | Academic Profile</title>
   <meta name="description" content="Official academic website of Godwin Edet Essoh, Ph.D., FCIA — Senior Lecturer, Public Administration and Human Resource Management, Ritman University." />
-
   <meta name="robots" content="index, follow" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-container">
-      <h1 class="logo">Dr. Godwin Edet Essoh</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="publications.html">Publications</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <h1 class="logo">Dr. Godwin Edet Essoh</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="publications.html">Publications</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
 
   <!-- HERO -->
-  <main class="container">
-
-  <section class="hero-grid">
+  <section class="hero-grid reveal">
     <div class="hero-text">
       <h2>Godwin Edet Essoh, Ph.D., FCIA</h2>
 
@@ -50,8 +50,8 @@
       </p>
 
       <div class="actions">
-        <a href="docs/godwin-essoh-cv.pdf" class="btn primary">Download CV</a>
-        <a href="publications.html" class="btn secondary">Publications</a>
+        <a href="docs/godwin-essoh-cv.pdf" class="button primary">Download CV</a>
+        <a href="publications.html" class="button secondary">Publications</a>
       </div>
     </div>
 
@@ -60,7 +60,45 @@
     </div>
   </section>
 
-  <section class="section">
+  <div class="section-divider"></div>
+
+  <!-- UNIVERSITIES -->
+  <section class="universities reveal">
+    <h2>Academic Affiliations</h2>
+
+    <div class="university-grid">
+
+      <div class="university-card">
+        <img src="images/shaw-university.jpg" alt="Shaw University campus">
+        <div class="overlay">
+          <h3>Shaw University</h3>
+          <p>United States</p>
+        </div>
+      </div>
+
+      <div class="university-card">
+        <img src="images/university-of-oklahoma.jpg" alt="University of Oklahoma campus">
+        <div class="overlay">
+          <h3>University of Oklahoma</h3>
+          <p>United States</p>
+        </div>
+      </div>
+
+      <div class="university-card">
+        <img src="images/university-of-abuja.jpg" alt="University of Abuja campus">
+        <div class="overlay">
+          <h3>University of Abuja</h3>
+          <p>Nigeria</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ACADEMIC FOCUS -->
+  <section class="section reveal">
     <h3>Academic Focus</h3>
     <p>
       My academic interests span Public Administration, Employment Relations,
@@ -70,7 +108,8 @@
     </p>
   </section>
 
-  <section class="section">
+  <!-- ACADEMIC LEADERSHIP -->
+  <section class="section reveal">
     <h3>Academic Leadership</h3>
     <p>
       I have served in several senior academic leadership roles including Acting Dean,
@@ -81,11 +120,56 @@
 
 </main>
 
-                    
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© Godwin Edet Essoh. Academic website for teaching, research, and public engagement.</p>
-  </footer>
+<!-- INFINITE SCROLL CONTENT -->
+<div id="infinite-content"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© Godwin Edet Essoh. Academic website for teaching, research, and public engagement.</p>
+</footer>
+
+<script>
+/* ===== Scroll Reveal ===== */
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+/* ===== Infinite Scroll ===== */
+const infiniteContent = document.getElementById("infinite-content");
+let blocksLoaded = 0;
+
+function loadMoreContent() {
+  if (blocksLoaded >= 3) return;
+
+  const block = document.createElement("div");
+  block.className = "card reveal";
+  block.style.maxWidth = "800px";
+  block.style.margin = "80px auto";
+  block.innerHTML = `
+    <h3>Academic Highlight</h3>
+    <p>Selected publications, talks, and research contributions.</p>
+  `;
+  infiniteContent.appendChild(block);
+  revealOnScroll();
+  blocksLoaded++;
+}
+
+window.addEventListener("scroll", () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+    loadMoreContent();
+  }
+});
+</script>
 
 </body>
 </html>
