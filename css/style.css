@@ -1,4 +1,18 @@
-/* RESET */
+/* ================================
+   DESIGN TOKENS (COLOR SYSTEM)
+================================ */
+:root {
+  --primary: #0B1C2D;      /* Oxford Blue */
+  --secondary: #1F2933;    /* Charcoal */
+  --background: #FAFAF8;   /* Warm off-white */
+  --accent: #C9A227;       /* Soft gold */
+  --muted-bg: #F2F4F7;     /* Section background */
+  --border: #E5E7EB;
+}
+
+/* ================================
+   RESET & BASE
+================================ */
 * {
   box-sizing: border-box;
   transition: all 0.3s ease;
@@ -7,15 +21,17 @@
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  color: #1f2933;
-  background: #ffffff;
+  background: var(--background);
+  color: var(--secondary);
   line-height: 1.7;
 }
 
-/* NAVBAR */
+/* ================================
+   NAVBAR
+================================ */
 .navbar {
-  border-bottom: 1px solid #e5e7eb;
-  background: #ffffff;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
@@ -30,27 +46,46 @@ body {
 .logo {
   font-size: 1.2rem;
   margin: 0;
+  color: var(--primary);
 }
 
 nav a {
   margin-left: 1rem;
   text-decoration: none;
-  color: #1f2933;
+  color: var(--secondary);
+  position: relative;
 }
 
 nav a.active {
   font-weight: bold;
-  text-decoration: underline;
 }
 
-/* LAYOUT */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   LAYOUT
+================================ */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 2.5rem 1rem;
 }
 
-/* HERO */
+/* ================================
+   HERO
+================================ */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -59,40 +94,57 @@ nav a.active {
 }
 
 .hero-text h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
 }
 
 .subtitle {
-  color: #374151;
+  color: #4B5563;
+  margin-bottom: 1.5rem;
 }
 
 .hero-image img {
   width: 100%;
   max-width: 320px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* BUTTONS */
+/* ================================
+   BUTTONS
+================================ */
 .button {
-  background: #1f3cff;
-  color: #fff;
+  background: var(--primary);
+  color: #ffffff;
   padding: 14px 28px;
   border-radius: 8px;
   text-decoration: none;
   margin-right: 0.8rem;
   display: inline-block;
+  font-size: 0.9rem;
 }
 
 .button.secondary {
   background: transparent;
-  border: 1px solid #1f3cff;
-  color: #1f3cff;
+  border: 1px solid var(--primary);
+  color: var(--primary);
 }
 
-/* UNIVERSITIES */
+.button:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* ================================
+   UNIVERSITIES SECTION
+================================ */
 .universities {
+  background: var(--muted-bg);
   padding: 80px 0;
-  background: #f8f9fb;
+}
+
+.universities h2 {
+  color: var(--primary);
 }
 
 .university-grid {
@@ -122,13 +174,13 @@ nav a.active {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  background: linear-gradient(to top, rgba(11,28,45,0.7), transparent);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -140,27 +192,45 @@ nav a.active {
   opacity: 1;
 }
 
-/* SECTIONS */
+/* ================================
+   SECTIONS
+================================ */
 .section {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 }
 
-/* DIVIDER */
+.section h3 {
+  color: var(--primary);
+}
+
+/* ================================
+   DIVIDER
+================================ */
 .section-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, #ddd, transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
   margin: 80px 0;
 }
 
-/* FOOTER */
+/* ================================
+   FOOTER
+================================ */
 .footer {
   text-align: center;
   padding: 2rem 1rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border);
   font-size: 0.85rem;
+  color: #6B7280;
 }
 
-/* SCROLL REVEAL */
+/* ================================
+   SCROLL REVEAL
+================================ */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -171,9 +241,15 @@ nav a.active {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
   }
 }
