@@ -266,3 +266,8 @@ nav a:hover::after {
     font-size: 2rem;
   }
 }
+
+.hero-image img.profile-hero {
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
