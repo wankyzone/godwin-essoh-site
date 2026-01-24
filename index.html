@@ -121,9 +121,6 @@
 
 </main>
 
-<!-- INFINITE SCROLL CONTENT -->
-<div id="infinite-content"></div>
-
 <!-- FOOTER -->
 <footer class="footer">
   <p>© Godwin Edet Essoh. Academic website for teaching, research, and public engagement.</p>
@@ -144,33 +141,6 @@ function revealOnScroll() {
 }
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
-
-/* ===== Infinite Scroll ===== */
-const infiniteContent = document.getElementById("infinite-content");
-let blocksLoaded = 0;
-
-function loadMoreContent() {
-  if (blocksLoaded >= 3) return;
-
-  const block = document.createElement("div");
-  block.className = "card reveal";
-  block.style.maxWidth = "800px";
-  block.style.margin = "80px auto";
-  block.innerHTML = `
-    <h3>Academic Highlight</h3>
-    <p>Selected publications, talks, and research contributions.</p>
-  `;
-  infiniteContent.appendChild(block);
-  revealOnScroll();
-  blocksLoaded++;
-}
-
-window.addEventListener("scroll", () => {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
-    loadMoreContent();
-  }
-});
 </script>
-
 </body>
 </html>
