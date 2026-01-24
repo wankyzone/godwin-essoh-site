@@ -239,7 +239,6 @@ nav a:hover::after {
    SCROLL REVEAL
 ================================ */
 .reveal {
-  opacity: 0;
   transform: translateY(40px);
 }
 
@@ -306,4 +305,21 @@ nav a:hover::after {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: block;
+}
+
+/* ===== HERO IMAGE FINAL FIX ===== */
+
+.hero-image {
+  width: 100%;
+  max-width: 420px;
+}
+
+.hero-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
