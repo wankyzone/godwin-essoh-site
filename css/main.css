@@ -326,3 +326,9 @@ nav a:hover::after {
   border-radius: 14px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
+
+.footer .credit {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #888;
+}
