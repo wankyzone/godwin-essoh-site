@@ -346,3 +346,45 @@ nav a:hover::after {
   margin-right: 16px;
   font-weight: 500;
 }
+
+/* ===== LINK HOVER EFFECTS ===== */
+
+a {
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Email & text links */
+a:hover {
+  color: #0a2a43;
+}
+
+/* Buttons (CV, Publications) */
+.button:hover {
+  background-color: #0a2a43;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Publication links */
+.pub-links a {
+  display: inline-block;
+  margin-right: 16px;
+  padding: 4px 0;
+  position: relative;
+}
+
+/* Underline animation */
+.pub-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #0a2a43;
+  transition: width 0.25s ease;
+}
+
+.pub-links a:hover::after {
+  width: 100%;
+}
