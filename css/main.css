@@ -388,3 +388,15 @@ a:hover {
 .pub-links a:hover::after {
   width: 100%;
 }
+
+.upgrade-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #fff3cd;
+  color: #664d03;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 10px 14px;
+  font-size: 14px;
+  text-align: center;
+}
