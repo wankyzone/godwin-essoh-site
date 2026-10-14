@@ -11,14 +11,6 @@ import { dirname, join, resolve } from "node:path";
 const root = process.cwd();
 const output = join(root, "out");
 const legacyPages = [
-  "profile.html",
-  "research.html",
-  "publications.html",
-  "teaching.html",
-  "leadership.html",
-  "engagements.html",
-  "cv.html",
-  "contact.html",
   "google409afdf8b1fa1cf.html",
   ".nojekyll",
 ];
