@@ -38,8 +38,10 @@ const homepage = readFileSync(join(output, "index.html"), "utf8");
 if (homepage.includes("assets/profile.jpg") || homepage.includes("docs/godwin-essoh-cv.pdf")) {
   throw new Error("Homepage references a missing portrait or CV document.");
 }
-if (!homepage.includes("/godwin-essoh-site/publications.html")) {
-  throw new Error("Homepage links do not include the configured GitHub Pages base path.");
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const expectedPublicationsPath = `${basePath}/publications.html`;
+if (!homepage.includes(expectedPublicationsPath)) {
+  throw new Error(`Homepage links do not include the configured publications path: ${expectedPublicationsPath}`);
 }
 
 for (const page of readdirSync(output).filter((file) => file.endsWith(".html"))) {

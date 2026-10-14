@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { basePath, siteOrigin } from "@/lib/site";
+import { siteOrigin, withBasePath } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: siteOrigin
-      ? new URL(`${basePath}/sitemap.xml`, siteOrigin).toString()
+      ? new URL(withBasePath("/sitemap.xml"), siteOrigin).toString()
       : undefined,
   };
 }
